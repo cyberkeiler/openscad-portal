@@ -13,6 +13,8 @@
 
 Route::get('/', 'OpenscadController@version');
 
+Route::get('/rendertest', 'OpenscadController@rendertest');
+
 Route::get('/home', function()
 {
 	return View::make('home');
