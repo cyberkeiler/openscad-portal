@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', 'OpenscadController@version');
+
+Route::get('/home', function()
 {
 	return View::make('home');
 });
