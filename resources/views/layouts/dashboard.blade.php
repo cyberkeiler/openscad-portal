@@ -17,7 +17,7 @@
     <!-- /.navbar-header -->
     @include('layouts.topbar')
     <!-- /.navbar-top-links -->
-    @include('sidebar.topbar')
+    @include('layouts.sidebar')
     <!-- /.navbar-static-side -->
   </nav>
 
