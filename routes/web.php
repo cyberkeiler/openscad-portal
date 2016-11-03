@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', 'OpenscadController@version');
+Route::get('/', function()
+{
+	return view('start');
+});
 
-Route::get('/rendertest', 'OpenscadController@rendertest');
-
-Route::get('/home', function()
+/*
+Route::get('/homeer', function()
 {
 	return View::make('home');
 });
@@ -73,10 +75,14 @@ Route::get('/blank', function()
 
 Route::get('/login', function()
 {
-	return View::make('login');
+	return View::make('auth.login');
 });
+
 
 Route::get('/documentation', function()
 {
 	return View::make('documentation');
-});
+});*/
+Route::auth();
+
+Route::get('logout', 'HomeController@logout');
