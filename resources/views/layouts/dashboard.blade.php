@@ -12,7 +12,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ url ('') }}">Openscad Portal | Netz39 kabelsalat</a>
+      <a class="navbar-brand" href="{{ url ('') }}">Openscad Portal | by terramultimedia.de</a>
     </div>
     <!-- /.navbar-header -->
     @include('layouts.topbar')
