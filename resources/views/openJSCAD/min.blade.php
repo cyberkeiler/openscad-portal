@@ -27,7 +27,14 @@
         </div>
         <!-- /.col-lg-12 -->
       </div>
-      <a class="btn btn-primary" href="/project/{{ $part->project->id }}" role="button"> &lt; Back to project</a>
+      <a class="btn btn-success" href="/project/{{ $part->project->id }}" role="button"> <i class="fa fa-arrow-left"></i> Back to project</a>
+      @foreach( $part->project->parts as $part_link )
+        @if($part_link->id == $part->id)
+        <a class="btn btn-primary" href="/view?part={{ $part_link->id }}" role="button"> {{ $part_link->title }}</a>
+        @else
+        <a class="btn btn-outline btn-primary" href="/view?part={{ $part_link->id }}" role="button"> {{ $part_link->title }}</a>
+        @endif
+      @endforeach
       <!-- setup display of the errors as required by OpenJSCAD.js -->
       <div class="jscad-container">
 
