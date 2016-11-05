@@ -25,10 +25,12 @@ Route::get('/view', 'ProjectController@viewpart');
 Route::get('/part/{part}/code.jscad', 'ProjectController@viewcode')->middleware('auth');
 
 //OpenJSCAD Editor
-Route::get('/editor', function(){return view('openJSCAD.original');})->middleware('auth');
+Route::get('/editor', 'ProjectController@editpart')->middleware('auth');
 
 //OpenJSCAD Files
 Route::get('/openscad.js', function(){return View::make('openJSCAD.original.openscad_js');});
+
+Route::get('/js/index.js', function(){return View::make('openJSCAD.js.index_js');});
 
 Auth::routes();
 

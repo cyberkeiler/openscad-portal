@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ $openjscad_BASEDIR }}style.css?0.5.1" type="text/css">
     <link rel="stylesheet" href="{{ $openjscad_BASEDIR }}openjscad.css?0.5.1" type="text/css">
   </head>
-  <body onload="fetch_Example('part/1/code'); return false;">
+  <body onload="fetchExample('/part/{{ $part->id }}/code.jscad'); return false;">
     <script src="{{ $openjscad_BASEDIR }}jquery/jquery-1.9.1.js"></script>
     <script src="{{ $openjscad_BASEDIR }}jquery/jquery-ui.js"></script>
     <script src="{{ $openjscad_BASEDIR }}jquery/jquery.hammer.js"></script>
@@ -57,27 +57,15 @@
           <tr><td align="right" class="infoOperation">Rotate XY</td><td class="infoKey">Right Mouse or ALT + Left Mouse</td></tr>
           <tr><td align="right" class="infoOperation">Zoom In/Out</td><td class="infoKey">Wheel Mouse or CTRL + Left Mouse</td></tr>
         </table>
-        <p>
-          <a class="navlink" href="https://en.wikibooks.org/wiki/OpenJSCAD_User_Guide" target="_blank">User Guide / Documentation <img src="{{ $openjscad_BASEDIR }}imgs/externalLink.png" style="externalLink"></a>
-          <br/><span class="menuSubInfo">How to program with OpenJSCAD: online, offline & CLI</span>
-        </p>
-        <p>
-          <a class="navlink" href="https://plus.google.com/115007999023701819645" rel="publisher" target="_blank">Recent Updates <img src="{{ $openjscad_BASEDIR }}imgs/externalLink.png" style="externalLink"></a>
-          <br/><span class="menuSubInfo">Announcements of recent developments</span>
-        </p>
-        <p>
-          <a class="navlink" href="https://plus.google.com/communities/114958480887231067224" target="_blank">Google+ Community <img src="{{ $openjscad_BASEDIR }}imgs/externalLink.png" style="externalLink"></a>
-          <br/><span class="menuSubInfo">Discuss with other users &amp; developers</span>
-        </p>
         <div id="examplesTitle" class="navlink"><a href='#' onclick='return false'>Examples</a></div>
         <div id="examples"></div>
         <span class="menuSubInfo">Dozens of examples to learn from</span>
         <p/>
-<!--
+
         <div id="optionsTitle" class="navlink"><a href='#' onclick='return false'>Options</a></div>
         <div id="options"></div>
         <span class="menuSubInfo">Your personal settings</span></p>
- -->
+
         <p/>
         <b>Supported Formats</b>
         <table class="info">
@@ -109,7 +97,7 @@
       <div id="editor">
 // -- OpenJSCAD.org logo
 
-test
+circle(r=1);
       </div>
     </div> <!-- editor -->
 
