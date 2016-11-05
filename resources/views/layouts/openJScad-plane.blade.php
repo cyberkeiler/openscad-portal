@@ -6,7 +6,9 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8"/>
-	<title>{{ $part->project->title }} - {{ $part->title }}</title>
+	<title>{{ config('app.name', 'Openscad Portal') }} | {{ $part->project->title }} - {{ $part->title }}</title>
+	<meta content="openscad Portal allows online editing your CAD Projects" name="description"/>
+	<meta content="terramultimedia.de" name="author"/>
   <script src="jquery/jquery-1.9.1.js?0.5.1"></script>
   <script src="jquery/jquery.hammer.js?0.5.1"></script>
   <script src="lightgl.js"></script>
