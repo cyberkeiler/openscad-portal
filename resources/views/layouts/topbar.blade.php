@@ -1,4 +1,5 @@
 <ul class="nav navbar-top-links navbar-right">
+  @if(auth::user() != null)
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -192,6 +193,7 @@
     </ul>
     <!-- /.dropdown-alerts -->
   </li>
+
   <!-- /.dropdown -->
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -203,10 +205,25 @@
       <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
       </li>
       <li class="divider"></li>
-      <li><a href="{{ url ('login') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+      <li><a href="{{ url ('logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
       </li>
     </ul>
     <!-- /.dropdown-user -->
   </li>
+  @else
+  <!-- /.dropdown -->
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-user">
+      <li><a href="{{ url ('login') }}"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+      </li>
+      <li><a href="{{ url ('register') }}"><i class="fa fa-edit fa-fw"></i> Register</a>
+      </li>
+    </ul>
+    <!-- /.dropdown-user -->
+  </li>
+  @endif
   <!-- /.dropdown -->
 </ul>
