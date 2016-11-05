@@ -12,4 +12,5 @@
     @include('widgets.panel', array('class'=>'success', 'header'=>true, 'footer'=>true, 'as'=>'panel'.$project->id))
   </div>
   @endforeach
+  @include('widgets.button', array('value'=>'Primary', 'class'=>'primary', 'size' =>'lg', 'value' => 'Create new Project'))
 @stop

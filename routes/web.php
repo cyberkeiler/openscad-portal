@@ -11,13 +11,31 @@
 |
 */
 
-Route::get('/', function()
-{
-	return view('start');
-});
+// Startpage
+Route::get('/', function(){return view('start');});
+
+Route::get('/home', 'ProjectController@showlist')->middleware('auth');
+//View Project
+Route::get('/projects', 'ProjectController@showlist')->middleware('auth');
+Route::get('/project/{project}', 'ProjectController@showproject')->middleware('auth');
+
+//View Part
+Route::get('/part/{part}/view', 'ProjectController@viewpart')->middleware('auth');
+Route::get('/view', 'ProjectController@viewpart');
+Route::get('/part/{part}/code.jscad', 'ProjectController@viewcode')->middleware('auth');
+
+//OpenJSCAD Editor
+Route::get('/editor', function(){return view('openJSCAD.original');})->middleware('auth');
+
+//OpenJSCAD Files
+Route::get('/openscad.js', function(){return View::make('openJSCAD.original.openscad_js');});
+
+Auth::routes();
+
+Route::get('/logout', 'HomeController@logout');
 
 /*
-Route::get('/homeer', function()
+Route::get('/home', function()
 {
 	return View::make('home');
 });
@@ -73,16 +91,7 @@ Route::get('/blank', function()
 	return View::make('blank');
 });
 
-Route::get('/login', function()
-{
-	return View::make('auth.login');
-});
-
-
 Route::get('/documentation', function()
 {
 	return View::make('documentation');
 });*/
-Route::auth();
-
-Route::get('logout', 'HomeController@logout');
