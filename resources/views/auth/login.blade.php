@@ -15,6 +15,7 @@
     </div>
     <!-- /.navbar-header -->
     @include('layouts.topbar')
+    @include('layouts.sidebar')
     <!-- /.navbar-top-links -->
     <!-- /.navbar-static-side -->
   </nav>
