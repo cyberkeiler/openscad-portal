@@ -9,7 +9,8 @@ use App\Project;
 class ProjectController extends Controller
 {
   public function editpart(Part $part){
-    $part = Part::find($_GET['part']);
+    if(isset($_GET['part'])) $part = Part::find($_GET['part']);
+  
     if($part == null) return "No part found!";
     return view('openJSCAD.index_html', compact('part'));
   }
