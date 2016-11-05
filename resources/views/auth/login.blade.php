@@ -55,9 +55,20 @@
               @endif
             </div>
           </div>
-
           <div class="form-group">
-            <div class="col-md-6 col-md-offset-4">
+            <div class="col-md-12 ">
+              <button type="submit" class="btn btn-success btn-lg btn-block">
+                Login
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-5 col-md-offset-2">
+              <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                Forgot Your Password?
+              </a>
+            </div>
+            <div class="col-md-5">
               <div class="checkbox">
                 <label>
                   <input type="checkbox" name="remember"> Remember Me
@@ -65,21 +76,9 @@
               </div>
             </div>
           </div>
-
-          <div class="form-group">
-            <div class="col-md-8 col-md-offset-4">
-              <button type="submit" class="btn btn-primary">
-                Login
-              </button>
-
-              <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                Forgot Your Password?
-              </a>
-            </div>
-          </div>
         </form>
         @endsection
-        @include('widgets.panel', array('class'=>'warning', 'as'=>'login', 'header'=>true))
+        @include('widgets.panel', array('class'=>'default', 'as'=>'login', 'header'=>true))
       </div>
     </div>
   </div>
