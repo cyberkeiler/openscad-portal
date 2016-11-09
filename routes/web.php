@@ -17,6 +17,7 @@ Route::get('/', function(){return view('start');});
 Route::get('/home', 'ProjectController@showlist')->middleware('auth');
 //View, Create and Edit Projects
 Route::get('/projects', 'ProjectController@showlist')->middleware('auth');
+Route::delete('/project', 'ProjectController@delete')->middleware('auth');
 Route::post('/project', 'ProjectController@store')->middleware('auth');
 Route::get('/project/create', 'ProjectController@create')->middleware('auth');
 Route::get('/project/{project}/edit', 'ProjectController@edit')->middleware('auth');

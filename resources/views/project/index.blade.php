@@ -11,6 +11,10 @@
 		@endsection
 		@include('widgets.panel', array('class'=>'success','header'=>true, 'as'=>'panel1'))
   </div>
+	<div class="col-sm-4"></div>
+	<div class="col-sm-2">
+		<a class="btn btn-primary" href="/project/{{$project->id}}/edit" role="button"><i class="fa fa-gear"></i> Project Settings</a>
+	</div>
 </div>
 <div class="row">
 	@foreach($project->parts as $part)

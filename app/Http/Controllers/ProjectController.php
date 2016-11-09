@@ -10,14 +10,22 @@ use Auth;
 class ProjectController extends Controller
 {
   public function create(){
-    return view('project.project');
+    $project = new Project;
+    return view('project.project', compact('project'));
+  }
+
+  public function delete(Request $request)
+  {
+    $project = Project::find($request->id);
+    $project->delete();
+    return self::showlist();
   }
   public function edit($id)
-{
+  {
     $project = Project::find($id);
     // Load user/createOrUpdate.blade.php view
     return view('project.project', compact('project'));
-}
+  }
   public function editpart(Part $part){
     if(isset($_GET['part'])) $part = Part::find($_GET['part']);
 
@@ -36,12 +44,21 @@ class ProjectController extends Controller
 
   public function store(Request $request)
   {
-    $project = new Project;
+    if(isset($request->id))
+    {
+      $project = Project::find($request->id);
+      if($project->owner_id != Auth::user()->id) return "This is not your project!";
+    }else
+    {
+      $project = new Project;
+      $project->owner_id = Auth::user()->id;
+    }
+
     $project->title = $request->title;
     $project->description = "".$request->description;
-    $project->owner_id = Auth::user()->id;
+
     $project->save();
-    return showproject($project);
+    return self::showproject($project);
   }
 
   public function update(){
