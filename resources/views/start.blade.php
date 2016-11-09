@@ -7,4 +7,13 @@
   <p>This site is under heavy developement, so do not expect anything to work the way it should!</p>
   @endsection
   @include('widgets.panel', array('header'=>true, 'as'=>'inside'))
+
+  @if(auth::user() == null)
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <br />
+      @include('widgets.login')
+    </div>
+  </div>
+  @endif
 @stop
