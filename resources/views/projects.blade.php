@@ -1,6 +1,7 @@
 @extends('layouts.dashboard')
 @section('page_heading','My Projects')
 
+
 @section('section')
   @foreach($projects as $project)
   <div class="col-md-4">
@@ -12,5 +13,5 @@
     @include('widgets.panel', array('class'=>'success', 'header'=>true, 'footer'=>true, 'as'=>'panel'.$project->id))
   </div>
   @endforeach
-  @include('widgets.button', array('value'=>'Primary', 'class'=>'primary', 'size' =>'lg', 'value' => 'Create new Project'))
+  <a href="/project/create" class="btn btn-primary btn-lg">Create new Project</a>
 @stop

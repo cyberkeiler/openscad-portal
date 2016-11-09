@@ -15,8 +15,11 @@
 Route::get('/', function(){return view('start');});
 
 Route::get('/home', 'ProjectController@showlist')->middleware('auth');
-//View Project
+//View, Create and Edit Projects
 Route::get('/projects', 'ProjectController@showlist')->middleware('auth');
+Route::post('/project', 'ProjectController@store')->middleware('auth');
+Route::get('/project/create', 'ProjectController@create')->middleware('auth');
+Route::get('/project/{project}/edit', 'ProjectController@edit')->middleware('auth');
 Route::get('/project/{project}', 'ProjectController@showproject')->middleware('auth');
 
 //View Part
@@ -96,4 +99,4 @@ Route::get('/blank', function()
 Route::get('/documentation', function()
 {
 	return View::make('documentation');
-});*/
+}); /* END OF DEMO */
