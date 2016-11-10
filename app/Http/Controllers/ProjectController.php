@@ -33,12 +33,18 @@ class ProjectController extends Controller
     return view('openJSCAD.index_html', compact('part'));
   }
 
+  public function newpart(Project $project){
+    $part = new Part;
+    $part->project_id = $project->id;
+    return view('project.part', compact('part'));
+  }
+
   public function showlist(){
     $projects = Project::get();
     return view('projects', compact('projects'));
   }
 
-  public function showproject(Project $project){
+  public static function showproject(Project $project){
     return view('project.index', compact('project'));
   }
 

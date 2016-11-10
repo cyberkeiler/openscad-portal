@@ -20,10 +20,14 @@ Route::get('/projects', 'ProjectController@showlist')->middleware('auth');
 Route::delete('/project', 'ProjectController@delete')->middleware('auth');
 Route::post('/project', 'ProjectController@store')->middleware('auth');
 Route::get('/project/create', 'ProjectController@create')->middleware('auth');
+Route::get('/project/{project}/newpart', 'ProjectController@newpart')->middleware('auth');
 Route::get('/project/{project}/edit', 'ProjectController@edit')->middleware('auth');
 Route::get('/project/{project}', 'ProjectController@showproject')->middleware('auth');
 
 //View Part
+Route::delete('/part', 'PartController@delete')->middleware('auth');
+Route::post('/part', 'PartController@store')->middleware('auth');
+Route::get('/part/{part}/edit', 'PartController@edit')->middleware('auth');
 Route::get('/part/{part}/view', 'ProjectController@viewpart')->middleware('auth');
 Route::get('/view', 'ProjectController@viewpart');
 Route::get('/part/{part}/code.jscad', 'ProjectController@viewcode')->middleware('auth');
