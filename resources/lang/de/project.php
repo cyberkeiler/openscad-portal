@@ -12,5 +12,8 @@ return [
   'View' => 'Viewer',
   'Delete' => 'Löschen',
 
+  'Viewer' => 'Viewer',
+  'Editor' => 'Editor',
+
   'CreatePart' => 'Part erstellen',
 ];
