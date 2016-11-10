@@ -22,7 +22,7 @@
 		@section ('part'.$part->id.'_panel_body')
 			{{ $part->description}}
 		@endsection
-		@section ('part'.$part->id.'_panel_footer', '  <a class="btn btn-primary" href="/view?part='.$part->id.'" role="button"><i class="fa fa-eye"></i> {{ trans('project.View') }}</a> <a class="btn btn-primary" href="/editor?part='.$part->id.'" role="button"><i class="fa fa-pencil"></i> {{ trans('project.Edit') }}</a> <a class="btn btn-danger" href="/project/'.$part->id.'" role="button"><i class="fa fa-trash"></i> {{ trans('project.Delete') }}</a>')
+		@section ('part'.$part->id.'_panel_footer', '  <a class="btn btn-primary" href="/view?part='.$part->id.'" role="button"><i class="fa fa-eye"></i> '.trans('project.View').'</a> <a class="btn btn-primary" href="/editor?part='.$part->id.'" role="button"><i class="fa fa-pencil"></i> '.trans('project.Edit').'</a> <a class="btn btn-danger" href="/project/'.$part->id.'" role="button"><i class="fa fa-trash"></i> '.trans('project.Delete').'</a>')
 		@include('widgets.panel', array('class'=>'default', 'header'=>true, 'footer'=>true, 'as'=>'part'.$part->id))
 	</div>
 	@endforeach

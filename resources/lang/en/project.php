@@ -8,6 +8,7 @@ return [
 
     'createnew' => 'Create new project',
     'Open' => 'Open',
+    'View' => 'View',
     'Edit' => 'Edit',
     'Delete' => 'Delete',
 
